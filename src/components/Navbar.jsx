@@ -19,12 +19,19 @@ const Navbar = ({user, handleLogOut}) => {
       <Link className='nav-link' to='/about'>About</Link>
     </nav>
   );
+
   return (
-    <div className="navbar">
-      <div className="iconDiv">
-      <h3 className="pageTitle">Brunch</h3>
+    <header>
+      <Link to='/'>
+        <div className='logo-wrapper' alt='logo'></div>
+      </Link>
+      <div className='welcome-message-'>
+        {user && <h3 className='welcome-message'>Welcome {user.name}!</h3>}
       </div>
+    <div className="nav-container">
+      {user ? userOptions : publicOptions}
     </div>
+    </header>
   )
 }
 export default Navbar
