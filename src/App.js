@@ -49,6 +49,11 @@ function App() {
               user={user}
               authenticated={authenticated}
               toggleAuthenticated={toggleAuthenticated} /> } />
+          <Route path='/register' element={<Register />} />
+          <Route path='/home' element={<Home />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/detail/:deatilId' element={<RestuarantDetails />} />
+          <Route path='/detail/detailId/user/:user/form' element={<RestaurantForms />} />
         </Routes>
       </main>
     </div>
