@@ -5,8 +5,11 @@ const Navbar = ({user, handleLogOut}) => {
   if (user) {
     userOptions = (
       <nav className='nav-links'>
-        <Link className='nav-link' to='/home'>Home</Link>  
+        <Link className='nav-link' to='/home'>Home</Link>
+        <img className='homeIcon'src='https://cdn-icons-png.flaticon.com/512/1946/1946488.png' alt=''/>  
         <Link className='nav-link' to='/about'>About</Link>
+        <Link className='nav-link' to=''>Add Restaurant</Link>
+        <img className='hammerIcon'src='https://cdn-icons-png.flaticon.com/512/969/969829.png' alt=''/>
         <Link className='nav-link' onClick={handleLogOut} to='/'>Sign Out</Link>    
         </nav>
     );
@@ -25,7 +28,7 @@ const Navbar = ({user, handleLogOut}) => {
       <Link to='/'>
         <div className='logo-wrapper' alt='logo'></div>
       </Link>
-      <div className='welcome-message-'>
+      <div className='welcome-message-container'>
         {user && <h3 className='welcome-message'>Welcome {user.name}!</h3>}
       </div>
     <div className="nav-container">
