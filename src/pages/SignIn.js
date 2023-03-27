@@ -23,9 +23,9 @@ const SignIn = (props) => {
 
     return (
     <div className="signIn main">
-        <form className="hs signin form" onSubmit={handleSubmit}>
+        <form className="signIn form" onSubmit={handleSubmit}>
             <h3>Sign In</h3>
-            <div className="hs signin">
+            <div className="signIn">
                 <label htmlFor="email">Email</label>
                 <input
                     onChange={handleChange}
@@ -35,7 +35,7 @@ const SignIn = (props) => {
                     value={formValues.email}
                     required />
             </div>
-            <div className="hs signin">
+            <div className="signIn">
                 <label htmlFor="password">Password</label>
                 <input 
                     onChange={handleChange}

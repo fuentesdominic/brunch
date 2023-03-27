@@ -33,7 +33,41 @@ const Register = () => {
         navigate('/')
       }
   return (
-    <div>Register</div>
+    <div className='signIn main'>
+      <div className='signIn text'>
+      <form className='signIn form' onSubmit={handleSubmit}>
+        <div className='signIn'>
+          <label htmlFor='name'>Name</label>
+          <input 
+            onChange={handleChange}
+            name='name'
+            type='name'
+            placeholder='John Smith'
+            value={formValues.name}
+            required />
+          </div>
+          <div className='signIn'>
+            <label htmlFor='email'>Email</label>
+            <input 
+              onChange={handleChange}
+              name='email'
+              type='email'
+              placeholder='JohnSmith@email.com'
+              value={formValues.email}
+              required />
+          </div>
+          <div className='signIn'>
+            <label htmlFor='password'>Password</label>
+            <input
+              onChange={handleChange}
+              type='password'
+              name='password'
+              value={formValues.password}
+              required />
+          </div>
+        </form>
+      </div>
+    </div>
   )
 }
 export default Register
