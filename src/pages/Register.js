@@ -73,6 +73,12 @@ const Register = () => {
               value={formValues.confirmPassword}
               required />
           </div>
+          <button 
+            disabled={!formValues.email || 
+              (!formValues.password && 
+                formValues.confirmPassword === formValues.password)}>
+                  Confirm
+                </button>
           </div>
         </form>
       </div>
