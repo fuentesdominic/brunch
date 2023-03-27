@@ -12,8 +12,8 @@ const About = () => {
 
   return (
     <div className='about'>
-      <h1></h1>
-      <p></p>
+      <h1>The Thought Process</h1>
+      <p>I started my coding journey by completing a code-along through General Assembly. I would end up finishing a couple of very small and beginner level projects. The last one I completed was something very basic in realtions to this application. I decided to leave General Assembly the same way I was welcomed. This gives you, the user, and myself a good understanding on how much knowledge I have gained on Computer Engineering in these short three months.</p>
       <h2>Creator</h2>
       <div className='about-self'>
         <img src={self.image} alt={self.name} />
