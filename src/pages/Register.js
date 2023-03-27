@@ -64,6 +64,15 @@ const Register = () => {
               name='password'
               value={formValues.password}
               required />
+          <div className='signIn'>
+            <label htmlFor='confirmPassword'>Confirm Password</label>
+            <input 
+              onChange={handleChange}
+              type='password'
+              name='confirmPassword'
+              value={formValues.confirmPassword}
+              required />
+          </div>
           </div>
         </form>
       </div>
