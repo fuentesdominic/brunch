@@ -22,7 +22,31 @@ const SignIn = (props) => {
     }
 
     return (
-    <div>SignIn</div>
+    <div className="signIn main">
+        <form className="hs signin form" onSubmit={handleSubmit}>
+            <h3>Sign In</h3>
+            <div className="hs signin">
+                <label htmlFor="email">Email</label>
+                <input
+                    onChange={handleChange}
+                    name='email'
+                    type='email'
+                    placeholder="example@example.com"
+                    value={formValues.email}
+                    required />
+            </div>
+            <div className="hs signin">
+                <label htmlFor="password">Password</label>
+                <input 
+                    onChange={handleChange}
+                    type='password'
+                    name='password'
+                    value={formValues.password}
+                    required />
+            </div>
+            <button disabled={!formValues.email || !formValues.password}>Sign In</button>
+        </form>
+    </div>
   )
 }
 export default SignIn
