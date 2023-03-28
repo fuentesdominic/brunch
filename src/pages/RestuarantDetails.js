@@ -34,6 +34,11 @@ const RestuarantDetails = () => {
     setMenus(res.data)
   }
 
+  const deleteRestaurant = async () => {
+    await axios.delete(`/restaurant/${restaurant._id}`)
+    navigate('/home')
+  }
+
   return (
     <div></div>
   )
