@@ -21,8 +21,8 @@ function App() {
   };
 
   const CheckToken = async () => {
-    const user = await CheckSession();
-    setUser(user);
+    const payload = await CheckSession();
+    setUser(payload);
     toggleAuthenticated(true);
   };
 
