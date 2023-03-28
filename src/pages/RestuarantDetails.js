@@ -7,7 +7,7 @@ const RestuarantDetails = () => {
   const location = useLocation()
   const navigate = useNavigate()
   const restaurant = location.state
-  let restaurantText = ''
+  let menuText = ''
 
   const [menus, setMenus] = useState()
 
@@ -38,6 +38,22 @@ const RestuarantDetails = () => {
     await axios.delete(`/restaurant/${restaurant._id}`)
     navigate('/home')
   }
+
+  const deleteMenu = async (menu) => {
+    await axios.delete(`/menu/${menu._id}`)
+    getMenus()
+  }
+
+  if (menus && menus.length) {
+    menuText = 'Menu List:'
+    console.log(menus)
+  } else {
+    menuText = 'No items listed on this Menu.. Add one below?'
+  }
+
+  useEffect(() => {
+    getMenus()
+  }, [])
 
   return (
     <div></div>
