@@ -36,7 +36,30 @@ const RestaurantForms = () => {
   }
 
   return (
-    <div></div>
+    <div>
+      <form onSubmit={handleSubmit} className="restaurantForm">
+        <h1>Add Restaurant</h1>
+        <input 
+          placeholder='Name'
+          id="name"
+          type="text"
+          onChange={handleChange}
+          value={formState.name} />
+        <input 
+          placeholder='Mile Marker'
+          id='mile_marker'
+          type='text'
+          onChange={handleChange}
+          value={formState.mile_marker} />
+        <input
+          placeholder="Picture URL:"
+          id="picture_url"
+          type="text"
+          onChange={handleChange}
+          value={formState.picture_url} />
+          {validButton}
+      </form>
+    </div>
   )
 }
 export default RestaurantForms
