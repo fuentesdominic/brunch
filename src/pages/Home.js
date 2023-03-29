@@ -1,22 +1,23 @@
 import { useState, useEffect } from "react"
 import axios from "axios"
 import { Link } from 'react-router-dom'
+import { GetAllRestaurants } from "../services/UserServices"
 
 const Home = () => {
 
   const [allRestaurants, setAllRestaurants] = useState()
 
-  const getAllRestaurants = async () => {
+  const getRestaurants = async () => {
     try {
-      let res = await axios.get('/restaurant/')
+      const res = await GetAllRestaurants()
       setAllRestaurants(res.data)
-    } catch (err) {
-      console.log(err)
+  } catch (err) {
+    console.log(err);
     }
-  }
+  };
 
   useEffect(() => {
-    getAllRestaurants()
+    getRestaurants()
   }, [])
 
 
@@ -33,7 +34,7 @@ const Home = () => {
               <h2 className="restaurantMM">{restaurant.mile_marker}</h2>
               <img className="restaurantImage" alt="Restaurant" src={`${restaurant.picture_url}`} />
             </Link>
-        ))}
+      ))}
     </div>
   )
 }
