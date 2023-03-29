@@ -21,7 +21,20 @@ const Home = () => {
 
 
   return (
-    <div className="homeBody"></div>
+    <div className="homeBody">
+      {allRestaurants && 
+        allRestaurants.map((restaurant) => (
+          <Link
+            to={`/details/${restaurant._id}`}
+            key={restaurant._id}
+            state={restaurant}
+            className="restaurantLink" >
+              <h2 className="restaurantTitle">{restaurant.name}</h2>
+              <h2 className="restaurantMM">{restaurant.mile_marker}</h2>
+              <img className="restaurantImage" src={`${restaurant.picture_url}`} />
+            </Link>
+        ))}
+    </div>
   )
 }
 export default Home

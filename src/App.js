@@ -52,8 +52,8 @@ function App() {
           <Route path='/register' element={<Register />} />
           <Route path='/home' element={<Home />} />
           <Route path='/about' element={<About />} />
-          <Route path='/detail/:deatilId/user/:user' element={<RestuarantDetails />} />
-          <Route path='/detail/detailId/user/:user/form' element={<RestaurantForms />} />
+          <Route path='/detail/:id' element={<RestuarantDetails />} />
+          <Route path='/create-restaurant' element={<RestaurantForms />} />
         </Routes>
       </main>
     </div>
