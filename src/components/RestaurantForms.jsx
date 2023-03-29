@@ -19,7 +19,7 @@ const RestaurantForms = () => {
 
   const handleSubmit = async (e) => {
     e.preventDeafault()
-    await axios.post('/create', formState)
+    await axios.post('/restaurant/create', formState)
     setFormState(initalState)
     await navigate('/home')
   }
