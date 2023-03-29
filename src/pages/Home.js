@@ -31,7 +31,7 @@ const Home = () => {
             className="restaurantLink" >
               <h2 className="restaurantTitle">{restaurant.name}</h2>
               <h2 className="restaurantMM">{restaurant.mile_marker}</h2>
-              <img className="restaurantImage" src={`${restaurant.picture_url}`} />
+              <img className="restaurantImage" alt="Restaurant" src={`${restaurant.picture_url}`} />
             </Link>
         ))}
     </div>
