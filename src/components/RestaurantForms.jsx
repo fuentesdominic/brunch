@@ -17,8 +17,26 @@ const RestaurantForms = () => {
     setFormState({ ...formState, [event.target.id]: event.target.value })
   }
 
+  const handleSubmit = async (e) => {
+    e.preventDeafault()
+    await axios.post('/create', formState)
+    setFormState(initalState)
+    await navigate('/home')
+  }
+
+  let validButton = ''
+  if (formState.name) {
+    validButton = (
+      <button type='submit' className='validButton'>
+        Add New Restaurant
+      </button>
+    )
+  } else {
+    validButton = <h3>Restaurant name is required</h3>
+  }
+
   return (
-    <div>RestaurantForms</div>
+    <div></div>
   )
 }
 export default RestaurantForms
