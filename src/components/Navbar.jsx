@@ -6,10 +6,10 @@ const Navbar = ({user, handleLogOut}) => {
     userOptions = (
       <nav className='nav-links'>
         <Link className='nav-link' to='/home'>Home</Link>
-        <img className='homeIcon'src='https://cdn-icons-png.flaticon.com/512/1946/1946488.png' alt=''/>  
+        {/* <img className='homeIcon'src='https://cdn-icons-png.flaticon.com/512/1946/1946488.png' alt=''/>   */}
         <Link className='nav-link' to='/about'>About</Link>
         <Link className='nav-link' to=''>Add Restaurant</Link>
-        <img className='hammerIcon'src='https://cdn-icons-png.flaticon.com/512/969/969829.png' alt=''/>
+        {/* <img className='hammerIcon'src='https://cdn-icons-png.flaticon.com/512/969/969829.png' alt=''/> */}
         <Link className='nav-link' onClick={handleLogOut} to='/'>Sign Out</Link>    
         </nav>
     );

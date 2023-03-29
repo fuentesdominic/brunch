@@ -48,7 +48,7 @@ const RestaurantForms = () => {
         <input 
           placeholder='Mile Marker'
           id='mile_marker'
-          type='text'
+          type="text"
           onChange={handleChange}
           value={formState.mile_marker} />
         <input

@@ -8,7 +8,7 @@ const Home = () => {
 
   const getAllRestaurants = async () => {
     try {
-      let res = await axios.get('/restuarant/')
+      let res = await axios.get('/restaurant/')
       setAllRestaurants(res.data)
     } catch (err) {
       console.log(err)
