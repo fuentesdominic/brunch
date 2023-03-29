@@ -105,7 +105,9 @@ const RestuarantDetails = () => {
               type="text"
               placeholder="Price: $"
               onChange={handleChange} />  
+            <button onClick={handleChange}>Add Item To Menu</button>
           </form>
+          <button onClick={() => deleteRestaurant(restaurant._id)} className="deleteRestaurantButton">Delete</button>
           </div>
   )}
   
