@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { CheckSession } from './services/Auth';
 import Home from './pages/Home';
 import Register from './pages/Register';
-import RestuarantDetails from './pages/RestuarantDetails';
+import RestaurantDetails from './pages/RestaurantDetails';
 import SignIn from './pages/SignIn';
 import About from './components/About';
 import Navbar from './components/Navbar';
@@ -52,7 +52,7 @@ function App() {
           <Route path='/register' element={<Register />} />
           <Route path='/home' element={<Home />} />
           <Route path='/about' element={<About />} />
-          <Route path='/detail/:id' element={<RestuarantDetails />} />
+          <Route path='/detail/:id' element={<RestaurantDetails />} />
           <Route path='/create-restaurant' element={<RestaurantForms />} />
         </Routes>
       </main>

@@ -29,7 +29,7 @@ export const CreateRestaurant = async (restaurant) => {
 
 export const CreateMenuById = async (restaurantId, menu) => {
     try {
-        console.log(restaurantId, 'restaurantId')
+        // console.log(restaurantId, 'restaurantId')
         const res = await Client.post(`/menu/create/${restaurantId}`, menu)
         return res.data;
     } catch (err) {

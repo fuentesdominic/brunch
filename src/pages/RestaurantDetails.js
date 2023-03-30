@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { useLocation, useNavigate } from "react-router-dom"
+import { useLocation, useNavigate, useParams } from "react-router-dom"
 import { UpdateMenu, GetMenuById, DeleteMenuById, DeleteRestaurantById, CreateMenuById } from "../services/UserServices"
 
 const RestuarantDetails = () => {
@@ -10,12 +10,12 @@ const RestuarantDetails = () => {
   console.log(location.state)
   let menuText = ''
   const user = localStorage.getItem('user')
-  // const restaurantId = localStorage.getItem('restaurantId')
+  const { id } = useParams()
   
     const initialState = {
       item: '',
       price: '',
-      restaurantId: restaurant.id,
+      restaurantId: id,
       user: user
     }
 
@@ -24,23 +24,20 @@ const RestuarantDetails = () => {
   const [updateMenuItem, setUpdateMenuItem] = useState()
 
   const [newMenu, setNewMenu] = useState(initialState)
-  //   item: '',
-  //   price: '',
-  //   restaurantId: restaurant.id,
-  //   user: user
-  // }) 
+  
   console.log(user, 'user')
   console.log(newMenu, 'newMenu')
 
   const handleSubmit = async (e) => {
+    console.log(e,'e')
     e.preventDefault()
-    const res = await CreateMenuById(newMenu)
-    setMenus()
+    const res = await CreateMenuById(id, newMenu)
+    GetMenu(res)
   }
 
   const GetMenu = async () => {
-    const res = await GetMenuById(place.id)
-    setNewMenu(res)
+    const res = await GetMenuById(id)
+    setMenus(res)
   }
   
   const handleChange = (event) => {
@@ -85,12 +82,12 @@ const RestuarantDetails = () => {
             <h2 className="menuListText">{menuText}</h2>
             {menus &&
               menus.map((oneMenu) => (
-                <div key={oneMenu._id} className="card">
-                  <h3>{oneMenu.name}</h3>
+                <div key={oneMenu.id} className="card">
+                  <h3>Item: {oneMenu.item}</h3>
                   {oneMenu.price ? (
                     <h3 className="price">
-                      {' '}
-                      - Price: ${oneMenu.price} 
+                      {''}
+                      Price: ${oneMenu.price} 
                     </h3>
                   ) : (
                     <></>
@@ -109,7 +106,7 @@ const RestuarantDetails = () => {
             <h2 className="menuListText">{menuText}</h2>
           )}
           <h2 className="createMenuText">Create New Menu Item</h2>
-          <form onSubmit={(e) => handleSubmit(e, updateMenuItem.id)}>
+          <form onSubmit={(e) => handleSubmit(e)}>
             <input
               name="item"
               value={newMenu.item}
@@ -122,9 +119,9 @@ const RestuarantDetails = () => {
               type="text"
               placeholder="Price: $"
               onChange={handleChange} />  
-            <button onClick={handleChange}>Add Item To Menu</button>
+            <button type="submit">Add Item To Menu</button>
           </form>
-          <button onClick={() => DeleteRestaurant(restaurant.id)} className="deleteRestaurantButton">Delete</button>
+          <button onClick={() => DeleteRestaurant(id)} className="deleteRestaurantButton">Delete</button>
           </div>
   )}
   
