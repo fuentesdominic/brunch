@@ -2,7 +2,7 @@ import Client from './api';
 
 export const GetAllRestaurants = async () => {
     try {
-        const res = await Client.get(`/restaurant`);
+        const res = await Client.get(`/restaurant/`);
         return res.data;
     } catch (err) {
         throw err;
@@ -29,6 +29,7 @@ export const CreateRestaurant = async (restaurant) => {
 
 export const CreateMenuById = async (restaurantId, menu) => {
     try {
+        console.log(restaurantId, 'restaurantId')
         const res = await Client.post(`/menu/create/${restaurantId}`, menu)
         return res.data;
     } catch (err) {

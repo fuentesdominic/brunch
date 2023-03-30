@@ -16,7 +16,6 @@ const RestaurantForms = () => {
   }
 
   const [formState, setFormState] = useState(initalState)
-  console.log(formState)
   const handleChange = (event) => {
     setFormState({ ...formState, [event.target.id]: event.target.value })
   }
@@ -24,7 +23,6 @@ const RestaurantForms = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     const res = await CreateRestaurant(formState)
-    console.log(res, 'res')
     navigate('/home')
   }
 

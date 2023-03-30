@@ -1,15 +1,16 @@
 import { useState, useEffect } from "react"
 import { useLocation, useNavigate } from "react-router-dom"
-import { CreateMenu, UpdateMenu, GetMenuById, DeleteMenuById, DeleteRestaurantById, CreateMenuById } from "../services/UserServices"
+import { UpdateMenu, GetMenuById, DeleteMenuById, DeleteRestaurantById, CreateMenuById } from "../services/UserServices"
 
 const RestuarantDetails = () => {
-  
+  const restaurant = 1
   const location = useLocation()
   const navigate = useNavigate()
-  const restaurant = location.state
-  console.log(restaurant, 'restaurant')
+  const {place} = location.state
+  console.log(location.state)
   let menuText = ''
   const user = localStorage.getItem('user')
+  // const restaurantId = localStorage.getItem('restaurantId')
   
     const initialState = {
       item: '',
@@ -34,11 +35,11 @@ const RestuarantDetails = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     const res = await CreateMenuById(newMenu)
-    setNewMenu()
+    setMenus()
   }
 
   const GetMenu = async () => {
-    const res = await GetMenuById(restaurant.id)
+    const res = await GetMenuById(place.id)
     setNewMenu(res)
   }
   
@@ -55,8 +56,8 @@ const RestuarantDetails = () => {
     navigate('/home')
   }
 
-  const DeleteMenu = async (menu) => {
-    const res = await DeleteMenuById(menu)
+  const DeleteMenu = async (menus) => {
+    const res = await DeleteMenuById(menus)
     GetMenuById(res.data)
   }
 
@@ -73,10 +74,10 @@ const RestuarantDetails = () => {
 
   return (
     <div className="detailsBody">
-      <img className="detailsImage" src={`${restaurant.picture_url}`} />
+      <img className="detailsImage" src={`${place.picture_url}`} />
     <div className="nameAndLocation">
-        <h1>{restaurant.name}</h1>
-        <h2 className="restaurantMM">{restaurant.mile_marker}</h2>
+        <h1>Restaurant: {place.name}</h1>
+        <h2 className="restaurantMM">Mile Marker: {place.mile_marker}</h2>
       </div>
   
         {menus && menus.length ? (

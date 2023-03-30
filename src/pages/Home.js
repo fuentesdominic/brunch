@@ -4,14 +4,14 @@ import { GetAllRestaurants } from "../services/UserServices"
 
 const Home = () => {
 
-  const { restaurants } = useParams();
-  const [allRestaurants, setAllRestaurants] = useState()
+  // const { restaurants } = useParams();
+  const [allRestaurants, setAllRestaurants] = useState([])
 
   const getRestaurants = async () => {
     try {
-      const res = await GetAllRestaurants(restaurants)
+      const res = await GetAllRestaurants()
       setAllRestaurants(res)
-      console.log(res.data)
+      console.log(res)
   } catch (err) {
     console.log(err);
     }
@@ -28,7 +28,7 @@ const Home = () => {
           <Link
             to={`/detail/${restaurant.id}`}
             key={restaurant.id}
-            state={restaurant}
+            state={{place: restaurant}}
             className="restaurantLink" >
               <h2 className="restaurantTitle">Restaurant: {restaurant.name}</h2>
               <h2 className="restaurantMM">Mile Marker: {restaurant.mile_marker}</h2>
