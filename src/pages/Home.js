@@ -1,16 +1,17 @@
 import { useState, useEffect } from "react"
-import axios from "axios"
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { GetAllRestaurants } from "../services/UserServices"
 
 const Home = () => {
 
+  const { restaurants } = useParams();
   const [allRestaurants, setAllRestaurants] = useState()
 
   const getRestaurants = async () => {
     try {
-      const res = await GetAllRestaurants()
-      setAllRestaurants(res.data)
+      const res = await GetAllRestaurants(restaurants)
+      setAllRestaurants(res)
+      console.log(res.data)
   } catch (err) {
     console.log(err);
     }
@@ -20,18 +21,17 @@ const Home = () => {
     getRestaurants()
   }, [])
 
-
   return (
     <div className="homeBody">
       {allRestaurants && 
         allRestaurants.map((restaurant) => (
           <Link
-            to={`/details/${restaurant._id}`}
-            key={restaurant._id}
+            to={`/detail/${restaurant.id}`}
+            key={restaurant.id}
             state={restaurant}
             className="restaurantLink" >
-              <h2 className="restaurantTitle">{restaurant.name}</h2>
-              <h2 className="restaurantMM">{restaurant.mile_marker}</h2>
+              <h2 className="restaurantTitle">Restaurant: {restaurant.name}</h2>
+              <h2 className="restaurantMM">Mile Marker: {restaurant.mile_marker}</h2>
               <img className="restaurantImage" alt="Restaurant" src={`${restaurant.picture_url}`} />
             </Link>
       ))}

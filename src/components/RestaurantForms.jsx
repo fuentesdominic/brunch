@@ -1,27 +1,31 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import axios from 'axios'
+import { CreateRestaurant } from '../services/UserServices'
 
 const RestaurantForms = () => {
 
   let navigate = useNavigate()
 
+  const user = localStorage.getItem('user')
+
   const initalState = {
     name: '',
     mile_marker: '',
-    picture_url: ''
+    picture_url: '',
+    user: user
   }
 
   const [formState, setFormState] = useState(initalState)
+  console.log(formState)
   const handleChange = (event) => {
     setFormState({ ...formState, [event.target.id]: event.target.value })
   }
 
   const handleSubmit = async (e) => {
-    e.preventDeafault()
-    await axios.post('/restaurant/create', formState)
-    setFormState(initalState)
-    await navigate('/home')
+    e.preventDefault()
+    const res = await CreateRestaurant(formState)
+    console.log(res, 'res')
+    navigate('/home')
   }
 
   let validButton = ''

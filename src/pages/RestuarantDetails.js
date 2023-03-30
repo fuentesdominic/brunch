@@ -1,47 +1,57 @@
 import { useState, useEffect } from "react"
 import axios from "axios"
 import { useLocation, useNavigate } from "react-router-dom"
+import { CreateMenu, UpdateMenu, GetMenuById, DeleteMenuById, DeleteRestaurantById } from "../services/UserServices"
 
 const RestuarantDetails = () => {
   
   const location = useLocation()
   const navigate = useNavigate()
   const restaurant = location.state
+  console.log(restaurant, 'restaurant')
   let menuText = ''
+  const user = localStorage.getItem('user')
 
   const [menus, setMenus] = useState()
 
-  const [updateRestaurant, setUpdateResaurant] = useState([])
+  const [updateMenuItem, setUpdateMenuItem] = useState()
 
   const [newMenu, setNewMenu] = useState({
     item: '',
     price: '',
-    restaurant_id: restaurant._id 
-  })
+    restaurant_id: restaurant.id,
+    user: user
+  }) 
+  console.log(user, 'user')
+  console.log(newMenu, 'newMenu')
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    await axios.post(`/menu/create/${restaurant._id}`, newMenu)
-    getMenus()
+    await CreateMenu(newMenu)
+    setNewMenu()
   }
 
+  const GetMenu = async () => {
+    const res = await GetMenuById(restaurant.id)
+    setNewMenu(res)
+  }
+  
   const handleChange = (event) => {
     setNewMenu({ ...newMenu, [event.target.name]: event.target.value})
   }
-
-  const getMenus = async () => {
-    let res = await axios.get(`/menu/${restaurant._id}`)
-    setMenus(res.data)
+  const UpdateMenus = async () => {
+    const res = await UpdateMenu()
+    setUpdateMenuItem(res.data)
   }
 
-  const deleteRestaurant = async () => {
-    await axios.delete(`/restaurant/${restaurant._id}`)
+  const DeleteRestaurantById = async () => {
+    const res = await DeleteRestaurantById()
     navigate('/home')
   }
 
-  const deleteMenu = async (menu) => {
-    await axios.delete(`/menu/${menu._id}`)
-    getMenus()
+  const DeleteMenuById = async (menu) => {
+    const res = await DeleteMenuById(menu)
+    GetMenuById(res.data)
   }
 
   if (menus && menus.length) {
@@ -52,7 +62,7 @@ const RestuarantDetails = () => {
   }
 
   useEffect(() => {
-    getMenus()
+    GetMenu()
   }, [])
 
   return (
@@ -80,7 +90,7 @@ const RestuarantDetails = () => {
                   )}
                   <img
                     id="deleteMenu"
-                    onClick={() => deleteMenu(oneMenu)}
+                    onClick={() => DeleteMenuById(oneMenu)}
                     className="trashIcon"
                     alt="trash icon"
                     src="https://cdn-icons-png.flaticon.com/512/542/542724.png"
@@ -92,7 +102,7 @@ const RestuarantDetails = () => {
             <h2 className="menuListText">{menuText}</h2>
           )}
           <h2 className="createMenuText">Create New Menu Item</h2>
-          <form onSubmit={(e) => handleSubmit(e, updateRestaurant.id)}>
+          <form onSubmit={(e) => handleSubmit(e, updateMenuItem.id)}>
             <input
               name="item"
               value={newMenu.item}
@@ -107,7 +117,7 @@ const RestuarantDetails = () => {
               onChange={handleChange} />  
             <button onClick={handleChange}>Add Item To Menu</button>
           </form>
-          <button onClick={() => deleteRestaurant(restaurant._id)} className="deleteRestaurantButton">Delete</button>
+          <button onClick={() => DeleteRestaurantById(restaurant.id)} className="deleteRestaurantButton">Delete</button>
           </div>
   )}
   
