@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react"
-import axios from "axios"
 import { useLocation, useNavigate } from "react-router-dom"
-import { CreateMenu, UpdateMenu, GetMenuById, DeleteMenuById, DeleteRestaurantById } from "../services/UserServices"
+import { CreateMenu, UpdateMenu, GetMenuById, DeleteMenuById, DeleteRestaurantById, CreateMenuById } from "../services/UserServices"
 
 const RestuarantDetails = () => {
   
@@ -11,23 +10,30 @@ const RestuarantDetails = () => {
   console.log(restaurant, 'restaurant')
   let menuText = ''
   const user = localStorage.getItem('user')
+  
+    const initialState = {
+      item: '',
+      price: '',
+      restaurantId: restaurant.id,
+      user: user
+    }
 
   const [menus, setMenus] = useState()
 
   const [updateMenuItem, setUpdateMenuItem] = useState()
 
-  const [newMenu, setNewMenu] = useState({
-    item: '',
-    price: '',
-    restaurant_id: restaurant.id,
-    user: user
-  }) 
+  const [newMenu, setNewMenu] = useState(initialState)
+  //   item: '',
+  //   price: '',
+  //   restaurantId: restaurant.id,
+  //   user: user
+  // }) 
   console.log(user, 'user')
   console.log(newMenu, 'newMenu')
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    await CreateMenu(newMenu)
+    const res = await CreateMenuById(newMenu)
     setNewMenu()
   }
 
@@ -44,12 +50,12 @@ const RestuarantDetails = () => {
     setUpdateMenuItem(res.data)
   }
 
-  const DeleteRestaurantById = async () => {
+  const DeleteRestaurant = async () => {
     const res = await DeleteRestaurantById()
     navigate('/home')
   }
 
-  const DeleteMenuById = async (menu) => {
+  const DeleteMenu = async (menu) => {
     const res = await DeleteMenuById(menu)
     GetMenuById(res.data)
   }
@@ -90,7 +96,7 @@ const RestuarantDetails = () => {
                   )}
                   <img
                     id="deleteMenu"
-                    onClick={() => DeleteMenuById(oneMenu)}
+                    onClick={() => DeleteMenu(oneMenu)}
                     className="trashIcon"
                     alt="trash icon"
                     src="https://cdn-icons-png.flaticon.com/512/542/542724.png"
@@ -117,7 +123,7 @@ const RestuarantDetails = () => {
               onChange={handleChange} />  
             <button onClick={handleChange}>Add Item To Menu</button>
           </form>
-          <button onClick={() => DeleteRestaurantById(restaurant.id)} className="deleteRestaurantButton">Delete</button>
+          <button onClick={() => DeleteRestaurant(restaurant.id)} className="deleteRestaurantButton">Delete</button>
           </div>
   )}
   

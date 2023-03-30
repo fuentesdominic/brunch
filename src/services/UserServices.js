@@ -27,18 +27,18 @@ export const CreateRestaurant = async (restaurant) => {
     }
 };
 
-export const CreateMenu = async (menu) => {
+export const CreateMenuById = async (restaurantId, menu) => {
     try {
-        const res = await Client.post(`/menu/create`, menu)
+        const res = await Client.post(`/menu/create/${restaurantId}`, menu)
         return res.data;
     } catch (err) {
         throw err;
     }
 };
 
-export const UpdateMenu = async (restaurantId, newMenuItem) => {
+export const UpdateMenu = async (restaurantId) => {
     try {
-        const res = await Client.put(`/menu/${restaurantId}`, newMenuItem)
+        const res = await Client.put(`/menu/${restaurantId}`)
         return res.data;
     } catch (err) {
         throw err;
