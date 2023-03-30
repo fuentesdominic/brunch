@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { useLocation, useNavigate, useParams } from "react-router-dom"
+import { useLocation, useNavigate, useParams, Link } from "react-router-dom"
 import { UpdateMenu, GetMenuById, DeleteMenuById, DeleteRestaurantById, CreateMenuById } from "../services/UserServices"
 
 const RestuarantDetails = () => {
@@ -99,6 +99,11 @@ const RestuarantDetails = () => {
                     alt="trash icon"
                     src="https://cdn-icons-png.flaticon.com/512/542/542724.png"
                   />
+                  <Link 
+                    to={`detail/${place.id}/editmenu`}
+                    state={{ origNote: menus }}>
+                      <button className="editButton">Edit Item</button>
+                    </Link>
                 </div>
               ))}
           </div>
