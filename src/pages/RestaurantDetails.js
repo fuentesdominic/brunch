@@ -48,14 +48,14 @@ const RestuarantDetails = () => {
     setUpdateMenuItem(res.data)
   }
 
-  const DeleteRestaurant = async () => {
-    const res = await DeleteRestaurantById()
+  const DeleteRestaurant = async (restaurantValue) => {
+    const res = await DeleteRestaurantById(restaurantValue)
     navigate('/home')
   }
 
-  const DeleteMenu = async () => {
-    const res = await DeleteMenuById(id, menus)
-    GetMenuById(res)
+  const DeleteMenu = async (itemId) => {
+    const res = await DeleteMenuById(itemId)
+    GetMenu()
   }
 
   if (menus && menus.length) {
@@ -94,7 +94,7 @@ const RestuarantDetails = () => {
                   )}
                   <img
                     id="deleteMenu"
-                    onClick={() => DeleteMenu(oneMenu)}
+                    onClick={() => DeleteMenu(oneMenu.id)}
                     className="trashIcon"
                     alt="trash icon"
                     src="https://cdn-icons-png.flaticon.com/512/542/542724.png"
@@ -121,7 +121,7 @@ const RestuarantDetails = () => {
               onChange={handleChange} />  
             <button type="submit">Add Item To Menu</button>
           </form>
-          <button onClick={() => DeleteRestaurant(id)} className="deleteRestaurantButton">Delete</button>
+          <button onClick={() => DeleteRestaurant(place.id)} className="deleteRestaurantButton">Delete</button>
           </div>
   )}
   
