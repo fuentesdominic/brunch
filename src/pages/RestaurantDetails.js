@@ -53,9 +53,9 @@ const RestuarantDetails = () => {
     navigate('/home')
   }
 
-  const DeleteMenu = async (menus) => {
-    const res = await DeleteMenuById(menus)
-    GetMenuById(res.data)
+  const DeleteMenu = async () => {
+    const res = await DeleteMenuById(id, menus)
+    GetMenuById(res)
   }
 
   if (menus && menus.length) {
