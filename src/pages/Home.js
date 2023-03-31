@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { Link, useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { GetAllRestaurants } from "../services/UserServices"
 
 const Home = () => {

@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react"
 import { useLocation, useNavigate, useParams, Link } from "react-router-dom"
-import { UpdateMenu, GetMenuById, DeleteMenuById, DeleteRestaurantById, CreateMenuById } from "../services/UserServices"
+import { GetMenuById, DeleteMenuById, DeleteRestaurantById, CreateMenuById } from "../services/UserServices"
 
 const RestuarantDetails = () => {
-  const restaurant = 1
+
   const location = useLocation()
   const navigate = useNavigate()
-  const {place} = location.state
-  console.log(location.state)
+  const { place } = location.state
+  
   let menuText = ''
   const user = localStorage.getItem('user')
   const { id } = useParams()
@@ -21,15 +21,9 @@ const RestuarantDetails = () => {
 
   const [menus, setMenus] = useState()
 
-  const [updateMenuItem, setUpdateMenuItem] = useState()
-
   const [newMenu, setNewMenu] = useState(initialState)
-  
-  console.log(user, 'user')
-  console.log(newMenu, 'newMenu')
 
   const handleSubmit = async (e) => {
-    console.log(e,'e')
     e.preventDefault()
     const res = await CreateMenuById(id, newMenu)
     GetMenu(res)
@@ -42,10 +36,6 @@ const RestuarantDetails = () => {
   
   const handleChange = (event) => {
     setNewMenu({ ...newMenu, [event.target.name]: event.target.value})
-  }
-  const UpdateMenus = async () => {
-    const res = await UpdateMenu()
-    setUpdateMenuItem(res.data)
   }
 
   const DeleteRestaurant = async (restaurantValue) => {
@@ -100,7 +90,7 @@ const RestuarantDetails = () => {
                     src="https://cdn-icons-png.flaticon.com/512/542/542724.png"
                   />
                   <Link 
-                    to={`detail/${place.id}/editmenu`}
+                    to={`/detail/${place.id}/editmenu`}
                     state={{ origNote: menus }}>
                       <button className="editButton">Edit Item</button>
                     </Link>
@@ -112,17 +102,19 @@ const RestuarantDetails = () => {
           )}
           <h2 className="createMenuText">Create New Menu Item</h2>
           <form onSubmit={(e) => handleSubmit(e)}>
+            <h2>Item:</h2>
             <input
               name="item"
               value={newMenu.item}
               type="text"
               placeholder="Item name"
               onChange={handleChange} />
+            <h2>Price:</h2>
             <input 
               name="price"
               value={newMenu.price}
               type="text"
-              placeholder="Price: $"
+              placeholder="$"
               onChange={handleChange} />  
             <button type="submit">Add Item To Menu</button>
           </form>

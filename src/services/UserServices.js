@@ -37,7 +37,7 @@ export const CreateMenuById = async (restaurantId, menu) => {
     }
 };
 
-export const UpdateMenu = async (restaurantId) => {
+export const UpdateMenuById = async (restaurantId) => {
     try {
         const res = await Client.put(`/menu/${restaurantId}`)
         return res.data;

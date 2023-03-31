@@ -9,7 +9,7 @@ import SignIn from './pages/SignIn';
 import About from './components/About';
 import Navbar from './components/Navbar';
 import RestaurantForms from './components/RestaurantForms';
-import EditMenu from './components/EditMenu';
+import EditMenuItem from './components/EditMenuItem';
 
 function App() {
   const [authenticated, toggleAuthenticated] = useState(false);
@@ -54,7 +54,7 @@ function App() {
           <Route path='/home' element={<Home />} />
           <Route path='/about' element={<About />} />
           <Route path='/detail/:id' element={<RestaurantDetails />} />
-          <Route path='detail/:id/editmenu' element={<EditMenu />} />
+          <Route path='detail/:id/editmenu' element={<EditMenuItem />} />
           <Route path='/create-restaurant' element={<RestaurantForms />} />
         </Routes>
       </main>
