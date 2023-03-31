@@ -15,7 +15,7 @@ const EditMenuItem = () => {
     const updateMenuItem = {
       menus: updatedItem.menus
     }
-      await UpdateMenuById(id, updatedItem)
+      await UpdateMenuById(id, updatedItem, updateMenuItem)
       navigate(`/detail/${id}`)
     } 
 

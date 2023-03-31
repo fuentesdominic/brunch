@@ -4,7 +4,6 @@ import { GetAllRestaurants } from "../services/UserServices"
 
 const Home = () => {
 
-  // const { restaurants } = useParams();
   const [allRestaurants, setAllRestaurants] = useState([])
 
   const getRestaurants = async () => {

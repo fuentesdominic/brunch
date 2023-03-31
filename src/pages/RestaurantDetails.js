@@ -90,8 +90,8 @@ const RestuarantDetails = () => {
                     src="https://cdn-icons-png.flaticon.com/512/542/542724.png"
                   />
                   <Link 
-                    to={`/detail/${place.id}/editmenu`}
-                    state={{ origNote: menus }}>
+                    to={`/detail/${place.id}/${oneMenu.id}/editmenu`}
+                    state={{ origNote: 'menus' }}>
                       <button className="editButton">Edit Item</button>
                     </Link>
                 </div>

@@ -54,7 +54,7 @@ function App() {
           <Route path='/home' element={<Home />} />
           <Route path='/about' element={<About />} />
           <Route path='/detail/:id' element={<RestaurantDetails />} />
-          <Route path='detail/:id/editmenu' element={<EditMenuItem />} />
+          <Route path='detail/:restaurantId/:itemId/editmenu' element={<EditMenuItem />} />
           <Route path='/create-restaurant' element={<RestaurantForms />} />
         </Routes>
       </main>
