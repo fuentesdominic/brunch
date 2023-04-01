@@ -1,35 +1,94 @@
+/* navbar */
 .navbar {
-  background-color: rgb(237, 253, 255);
+  background-color: black;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  /* align-items: center; */
-  border-bottom: solid #33b2bc;
-  height: 8vh;
-  transition: all 0.4s;
-}
-
-.pageTitle {
-  font-size: 30px;
-  left: 0;
-  top: 0
-}
-
-.navbar:hover {
+  align-items: center;
+  border-bottom: solid #fb8c00;
   height: 10vh;
   transition: all 0.4s;
+  
 }
-
+.navbar:hover {
+  height: 12vh;
+  transition: all 0.4s;
+}
 .nav-link {
-  color: #33b2bc;
-  font-family: sans-serif;
+  color: #fb8c00;
+  font-family: marker felt, fantasy;
+  text-decoration: none;
+  justify-content: space-between;
+  margin-left: 150px;
+  margin-right: 50px;
 }
-
 .brunchIcon {
   max-width: 30px;
   padding-left: 10px;
   object-fit: contain;
+  margin-left: 0;
 }
+.pageTitle {
+  color: #fb8c00;
+  font-family: marker felt, fantasy;
+  justify-content: space-between;
+  font-size: 25px;
+  margin-left: 10px;
+}
+.brunchDiv {
+  display: flex;
+}
+/* home page  */
+.restaurantImage {
+  align-items: center;
+  width: 80vw;
+  border-radius: 40px;
+}
+.homeBody {
+  flex-direction: column;
+    align-items: center;
+}
+.restaurantTitle {
+  color: black;
+  font-family: Gill sans;
+  font-size: 40px;
+  margin: 10px;
+  justify-content: center;
+}
+.homeMM {
+  font-family: Gill sans;
+  color: black;
+  margin: 5px;
+}
+.restaurantLink {
+  max-width: 50vw;
+  justify-content: center;
+  /* flex-direction: column;
+  align-items: center; */
+  transition: all 0.3s;
+text-decoration: none;
+}
+.restaurantLink:hover {
+  width: 50vw;
+  border-radius: 40px;
+}
+/* restaurant details */
+.detailsImage {
+  margin-top: 20px;
+  width: 60vw;
+  border-radius: 40px;
+}
+.nameAndLocation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 40px;
+}
+.trashIcon {
+  max-width: 25px;
+  object-fit: contain;
+  padding: 5px;
+}
+
+
 
 @keyframes App-logo-spin {
   from {

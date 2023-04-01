@@ -28,9 +28,9 @@ const Home = () => {
             to={`/detail/${restaurant.id}`}
             key={restaurant.id}
             state={{place: restaurant}}
-            className="restaurantLink" >
-              <h2 className="restaurantTitle">Restaurant: {restaurant.name}</h2>
-              <h2 className="restaurantMM">Mile Marker: {restaurant.mile_marker}</h2>
+            className="restaurantLink">
+              <h1 className="restaurantTitle">{restaurant.name}</h1>
+              <h2 className="homeMM">{restaurant.mile_marker}</h2>
               <img className="restaurantImage" alt="Restaurant" src={`${restaurant.picture_url}`} />
             </Link>
       ))}

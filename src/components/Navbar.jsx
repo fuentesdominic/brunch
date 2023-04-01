@@ -4,19 +4,19 @@ const Navbar = ({user, handleLogOut}) => {
   let userOptions;
   if (user) {
     userOptions = (
-      <div className='navbar'>
       <nav className='nav-links'>
-        <div className='brunch'>
+        <div className='navbar'>
+        <div className='brunchDiv'>
           <h3 className='pageTitle'>Brunch</h3>
-        <img className='brunchIcon'src='https://cdn-icons-png.flaticon.com/512/7910/7910209.png' alt=''/>  
-        </div>
+        <img className='brunchIcon'src='https://cdn-icons-png.flaticon.com/512/4825/4825292.png' alt=''/>  
+        </div> 
         <Link className='nav-link' to='/home'>Home</Link>
         <Link className='nav-link' to='/about'>About</Link>
         <Link className='nav-link' to='/create-restaurant'>Add Restaurant</Link>
         {/* <img className='hammerIcon'src='https://cdn-icons-png.flaticon.com/512/969/969829.png' alt=''/> */}
-        <Link className='nav-link' onClick={handleLogOut} to='/'>Sign Out</Link>    
-        </nav>
+        <Link className='nav-link' onClick={handleLogOut} to='/'>Sign Out</Link>   
         </div>
+        </nav>
     );
   }
 

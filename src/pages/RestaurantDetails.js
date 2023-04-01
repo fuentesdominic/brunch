@@ -63,8 +63,8 @@ const RestuarantDetails = () => {
     <div className="detailsBody">
       <img className="detailsImage" src={`${place.picture_url}`} />
     <div className="nameAndLocation">
-        <h1>Restaurant: {place.name}</h1>
-        <h2 className="restaurantMM">Mile Marker: {place.mile_marker}</h2>
+        <h1 className="detailsName">{place.name}</h1>
+        <h2 className="detailsMM">{place.mile_marker}</h2>
       </div>
   
         {menus && menus.length ? (
@@ -98,9 +98,9 @@ const RestuarantDetails = () => {
               ))}
           </div>
           ) : (
-            <h2 className="menuListText">{menuText}</h2>
+            <h2>{menuText}</h2>
           )}
-          <h2 className="createMenuText">Create New Menu Item</h2>
+          <h2>Create New Menu Item</h2>
           <form onSubmit={(e) => handleSubmit(e)}>
             <h2>Item:</h2>
             <input
