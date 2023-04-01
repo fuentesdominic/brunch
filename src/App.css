@@ -232,12 +232,12 @@ text-decoration: none;
   font-size: 50px;
   font-family: Gill sans;
   margin-top: 15px;
-  margin-bottom: 5px;
+  margin-bottom: 25px;
 }
 .about h2 {
   font-size: 30px;
   font-family: Gill sans;
-  margin-top: 25px;
+  margin-top: 15px;
 }
 .about-self {
   display: flex;
@@ -260,6 +260,40 @@ text-decoration: none;
   color: #fb8c00;
   text-decoration: none;
   padding: 5px;
+}
+/* register */
+.registerMain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.registerInput {
+  display: flex;
+  border-radius: 25px;
+  font-family: Gill sans;
+  margin-top: 2px;
+}
+.registerTitle {
+  font-size: 50px;
+  font-family: Gill sans;
+  margin: 25px;
+}
+.registerLabel {
+  font-family: Gill sans;
+}
+.registerImage {
+  margin: 15px;
+  width: 60vw;
+  height: 80vh;
+  border-radius: 40px;
+}
+.registerButton {
+  border-radius: 25px;
+  margin: 10px;
+  background-color: #fb8c00;
+}
+.registerButton:hover {
+  transform: scale(1.1);
 }
 
 
