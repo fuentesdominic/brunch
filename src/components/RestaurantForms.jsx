@@ -34,30 +34,34 @@ const RestaurantForms = () => {
       </button>
     )
   } else {
-    validButton = <h3>Restaurant name is required</h3>
+    validButton = <h3 className='validButtonText'>Restaurant name is required</h3>
   }
 
   return (
     <div className='restaurantForm'>
+       <img className="updateImage" src="https://www.worldatlas.com/upload/70/97/1d/shutterstock-1478766713.jpg" alt=""></img>
       <form onSubmit={handleSubmit} className="restaurantForm">
-        <h1>Add Restaurant</h1>
+        <h1 className='addFormTitle'>Add Restaurant</h1>
         <input 
           placeholder='Name'
           id="name"
           type="text"
           onChange={handleChange}
+          className="addFormInput"
           value={formState.name} />
         <input 
           placeholder='Mile Marker'
           id='mile_marker'
           type="text"
           onChange={handleChange}
+          className="addFormInput"
           value={formState.mile_marker} />
         <input
           placeholder="Picture URL:"
           id="picture_url"
           type="text"
           onChange={handleChange}
+          className="addFormInput"
           value={formState.picture_url} />
           {validButton}
       </form>
