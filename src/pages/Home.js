@@ -24,6 +24,7 @@ const Home = () => {
     <div className="homeBody">
       {allRestaurants && 
         allRestaurants.map((restaurant) => (
+          <div className="home-links">
           <Link
             to={`/detail/${restaurant.id}`}
             key={restaurant.id}
@@ -33,6 +34,7 @@ const Home = () => {
               <h2 className="homeMM">{restaurant.mile_marker}</h2>
               <img className="restaurantImage" alt="Restaurant" src={`${restaurant.picture_url}`} />
             </Link>
+            </div>
       ))}
     </div>
   )
