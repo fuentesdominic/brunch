@@ -170,7 +170,8 @@ text-decoration: none;
   align-items: center;
 }
 .updateMenuButton {
-  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-top: 15px;
   border-radius: 25px;
   background-color: #fb8c00;
 }
@@ -180,13 +181,19 @@ text-decoration: none;
 .updateInput {
   border-radius: 25px;
   font-family: Gill sans;
-  margin: 5px;
+  margin: 3px;
 }
 .updateMenuTitle {
-  margin-top: 50px;
-  margin-bottom: 15px;
-  font-size: 45px;
+  margin-top: 25px;
+  margin-bottom: 5px;
+  font-size: 50px;
   font-family: Gill sans;
+}
+.updateImage {
+  margin-top: 20px;
+  width: 60vw;
+  height: 80vh;
+  border-radius: 40px;
 }
 
 

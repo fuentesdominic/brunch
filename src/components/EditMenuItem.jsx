@@ -25,6 +25,7 @@ const EditMenuItem = () => {
 
   return (
     <div className="updateMenuItem">
+      <img className="updateImage" src="https://www.worldatlas.com/upload/70/97/1d/shutterstock-1478766713.jpg" alt=""></img>
       <h1 className="updateMenuTitle">Edit Item</h1>
       <form onSubmit={handleSubmit} className="updateMenuForm">
         <div className="updateMenuItem">
