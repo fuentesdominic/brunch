@@ -77,7 +77,7 @@ const RestuarantDetails = () => {
                   {oneMenu.price ? (
                     <h3 className="price">
                       {''}
-                      Price: ${oneMenu.price} 
+                       Price: ${oneMenu.price} 
                     </h3>
                   ) : (
                     <></>
@@ -100,25 +100,25 @@ const RestuarantDetails = () => {
           ) : (
             <h2>{menuText}</h2>
           )}
-          <h2>Create New Menu Item</h2>
+          <h2 className="createMenuText">Create New Menu Item</h2>
           <form onSubmit={(e) => handleSubmit(e)}>
-            <h2>Item:</h2>
             <input
               name="item"
               value={newMenu.item}
               type="text"
               placeholder="Item name"
+              className="newItemInput"
               onChange={handleChange} />
-            <h2>Price:</h2>
             <input 
               name="price"
               value={newMenu.price}
               type="text"
-              placeholder="$"
+              placeholder="$ Price"
+              className="newItemInput"
               onChange={handleChange} />  
-            <button type="submit">Add Item To Menu</button>
+            <button className="addItemButton" type="submit">Add Item To Menu</button>
           </form>
-          <button onClick={() => DeleteRestaurant(place.id)} className="deleteRestaurantButton">Delete</button>
+          <button onClick={() => DeleteRestaurant(place.id)} className="deleteRestaurantButton">Delete Restaurant</button>
           </div>
   )}
   

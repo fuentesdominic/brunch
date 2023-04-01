@@ -38,7 +38,7 @@ const RestaurantForms = () => {
   }
 
   return (
-    <div>
+    <div className='restaurantForm'>
       <form onSubmit={handleSubmit} className="restaurantForm">
         <h1>Add Restaurant</h1>
         <input 

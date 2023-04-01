@@ -28,18 +28,20 @@ const EditMenuItem = () => {
       <h1 className="updateMenuTitle">Edit Item</h1>
       <form onSubmit={handleSubmit} className="updateMenuForm">
         <div className="updateMenuItem">
-          <h2>Item:</h2>
+          {/* <h2>Item:</h2> */}
           <input
             name="Item"
             id={updatedItem.item}
             placeholder="Item name"
+            className="updateInput"
             onChange={handleChange}>
             </input>
-          <h2>Price:</h2>
+          {/* <h2>Price:</h2> */}
           <input
             name="Price"
             id={updatedItem.Price}
-            placeholder="$"
+            placeholder="$ Price"
+            className="updateInput"
             onChange={handleChange}>
           </input>
           <button className="updateMenuButton">Submit</button>
