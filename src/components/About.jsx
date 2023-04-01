@@ -16,14 +16,14 @@ const About = () => {
       <p>I started my coding journey by completing a code-along through General Assembly. I would end up finishing a couple of very small and beginner level projects. The last one I completed was something very basic in realtions to this application. I decided to leave General Assembly the same way I was welcomed. This gives you, the user, and myself a good understanding on how much knowledge I have gained on Computer Engineering in these short three months.</p>
       <h2>Creator</h2>
       <div className='about-self'>
-        <img src={self.image} alt={self.name} />
+        <img className='aboutImage' src={self.image} alt={self.name} />
         <h3>{self.name}</h3>
         <div className='about-links'>
-          <a href={self.linkedin}>
+          <a className='about-link' href={self.linkedin}>
             <FontAwesomeIcon icon={faLinkedin} />
             LinkedIn
           </a>
-          <a href={self.github}>
+          <a className='about-link' href={self.github}>
             <FontAwesomeIcon icon={faGithub} />
             GitHub
           </a>

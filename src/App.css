@@ -166,7 +166,7 @@ text-decoration: none;
 .addFormTitle {
   font-size: 50px;
   font-family: Gill sans;
-  margin: 15px
+  margin: 15px;
 }
 .addFormInput {
   border-radius: 25px;
@@ -221,7 +221,46 @@ text-decoration: none;
   height: 80vh;
   border-radius: 40px;
 }
-
+/* about page */
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+.about h1 {
+  font-size: 50px;
+  font-family: Gill sans;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+.about h2 {
+  font-size: 30px;
+  font-family: Gill sans;
+  margin-top: 25px;
+}
+.about-self {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 40px;
+  box-shadow: 0 0 10px;
+  padding: 1rem;
+}
+.about h3 {
+  font-family: Gill sans;
+}
+.aboutImage {
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 40px;
+}
+.about-link {
+  color: #fb8c00;
+  text-decoration: none;
+  padding: 5px;
+}
 
 
 @keyframes App-logo-spin {
