@@ -295,7 +295,39 @@ text-decoration: none;
 .registerButton:hover {
   transform: scale(1.1);
 }
-
+/* signin */
+.signInMain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.signInLogo {
+  width: 30vw;
+  margin-top: 15px;
+}
+.signInTitle {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 50px;
+  font-family: Gill sans;
+}
+.signInInput {
+  display: flex;
+  border-radius: 25px;
+  font-family: Gill sans;
+  margin-top: 2px;
+}
+.signInLabel {
+  font-family: Gill sans;
+}
+.signInButton {
+  border-radius: 25px;
+  margin: 10px;
+  background-color: #fb8c00;
+}
+.signInButton:hover {
+  transform: scale(1.1);
+}
 
 @keyframes App-logo-spin {
   from {

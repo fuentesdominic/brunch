@@ -22,29 +22,33 @@ const SignIn = (props) => {
     }
 
     return (
-    <div className="signIn main">
+    <div className="signInMain">
+        <img className="signInLogo" src="https://cdn-icons-png.flaticon.com/512/4825/4825292.png" alt=""></img>
+            <h1 className="signInTitle">Sign In</h1>
         <form className="signIn form" onSubmit={handleSubmit}>
-            <h3>Sign In</h3>
             <div className="signIn">
-                <label htmlFor="email">Email</label>
+                <label className="signInLabel" htmlFor="email">Email: </label>
                 <input
                     onChange={handleChange}
                     name='email'
                     type='email'
                     placeholder="example@example.com"
+                    className="signInInput"
                     value={formValues.email}
                     required />
             </div>
             <div className="signIn">
-                <label htmlFor="password">Password</label>
+                <label className="signInLabel" htmlFor="password">Password: </label>
                 <input 
                     onChange={handleChange}
                     type='password'
                     name='password'
+                    placeholder="1234"
+                    className="signInInput"
                     value={formValues.password}
                     required />
             </div>
-            <button disabled={!formValues.email || !formValues.password}>Sign In</button>
+            <button className="signInButton" disabled={!formValues.email || !formValues.password}>Sign In</button>
         </form>
     </div>
   )
