@@ -17,8 +17,8 @@ const EditMenuItem = () => {
       navigate(`/detail/${restaurantId}`)
     } 
 
-    const GetMenuItem = async () => {
-      const res = await GetOneMenuItem(itemId)
+    const GetMenuItem = async (newItemId) => {
+      const res = await GetOneMenuItem(itemId, newItemId)
       console.log(res)
       setUpdatedItem(res)
     }

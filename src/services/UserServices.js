@@ -46,9 +46,9 @@ export const GetOneMenuItem = async (itemId) => {
     }
 }
 
-export const UpdateMenuById = async (restaurantId) => {
+export const UpdateMenuById = async (itemId, newItemId) => {
     try {
-        const res = await Client.put(`/menu/${restaurantId}`)
+        const res = await Client.put(`/menu/${itemId}`, newItemId)
         return res.data;
     } catch (err) {
         throw err;
