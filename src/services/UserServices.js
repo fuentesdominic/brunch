@@ -37,6 +37,15 @@ export const CreateMenuById = async (restaurantId, menu) => {
     }
 };
 
+export const GetOneMenuItem = async (itemId) => {
+    try {
+        const res = await Client.get(`/menu/item/${itemId}`)
+        return res.data;
+    } catch (err) {
+        throw err;
+    }
+}
+
 export const UpdateMenuById = async (restaurantId) => {
     try {
         const res = await Client.put(`/menu/${restaurantId}`)
@@ -63,3 +72,12 @@ export const DeleteMenuById = async (menuId) => {
         throw err;
     }
 };
+
+export const GetRestaurantById = async (restaurantId) => {
+    try {
+        const res = await Client.get(`/restaurant/${restaurantId}`)
+        return res.data;
+    } catch (err) {
+        throw err;
+    }
+}

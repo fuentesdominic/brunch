@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { useLocation, useNavigate, useParams, Link } from "react-router-dom"
-import { GetMenuById, DeleteMenuById, DeleteRestaurantById, CreateMenuById } from "../services/UserServices"
+import { GetMenuById, DeleteMenuById, DeleteRestaurantById, CreateMenuById, GetRestaurantById } from "../services/UserServices"
 
 const RestuarantDetails = () => {
 
@@ -33,6 +33,11 @@ const RestuarantDetails = () => {
     const res = await GetMenuById(id)
     setMenus(res)
   }
+
+  const GetRestaurant = async () => {
+    const res = await GetRestaurantById(id)
+    GetMenu(res)
+  }
   
   const handleChange = (event) => {
     setNewMenu({ ...newMenu, [event.target.name]: event.target.value})
@@ -57,6 +62,7 @@ const RestuarantDetails = () => {
 
   useEffect(() => {
     GetMenu()
+    GetRestaurant()
   }, [])
 
   return (
@@ -64,7 +70,7 @@ const RestuarantDetails = () => {
       <img className="detailsImage" src={`${place.picture_url}`} />
     <div className="nameAndLocation">
         <h1 className="detailsName">{place.name}</h1>
-        <h2 className="detailsMM">{place.mile_marker}</h2>
+        <h2 className="detailsMM">{place.mile_marker}MM</h2>
       </div>
   
         {menus && menus.length ? (
