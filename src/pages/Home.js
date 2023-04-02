@@ -28,7 +28,6 @@ const Home = () => {
           <Link
             to={`/detail/${restaurant.id}`}
             key={restaurant.id}
-            state={{place: restaurant}}
             className="restaurantLink">
               <h1 className="restaurantTitle">{restaurant.name}</h1>
               <h2 className="homeMM">{restaurant.mile_marker}MM</h2>

@@ -1,12 +1,10 @@
 import { useState, useEffect } from "react"
-import { useLocation, useNavigate, useParams, Link } from "react-router-dom"
+import { useNavigate, useParams, Link } from "react-router-dom"
 import { GetMenuById, DeleteMenuById, DeleteRestaurantById, CreateMenuById, GetRestaurantById } from "../services/UserServices"
 
 const RestuarantDetails = () => {
 
-  const location = useLocation()
   const navigate = useNavigate()
-  const { place } = location.state
   
   let menuText = ''
   const user = localStorage.getItem('user')
@@ -20,6 +18,8 @@ const RestuarantDetails = () => {
     }
 
   const [menus, setMenus] = useState()
+  const [oneRestaurant, setOneRestaurant] = useState()
+  console.log(oneRestaurant)
 
   const [newMenu, setNewMenu] = useState(initialState)
 
@@ -36,7 +36,7 @@ const RestuarantDetails = () => {
 
   const GetRestaurant = async () => {
     const res = await GetRestaurantById(id)
-    GetMenu(res)
+    setOneRestaurant(res)
   }
   
   const handleChange = (event) => {
@@ -64,13 +64,14 @@ const RestuarantDetails = () => {
     GetMenu()
     GetRestaurant()
   }, [])
+  if (oneRestaurant)
 
   return (
-    <div className="detailsBody">
-      <img className="detailsImage" src={`${place.picture_url}`} />
+    <div className="detailsBody">    
+      <img className="detailsImage" src={`${oneRestaurant.picture_url}`} />
     <div className="nameAndLocation">
-        <h1 className="detailsName">{place.name}</h1>
-        <h2 className="detailsMM">{place.mile_marker}MM</h2>
+        <h1 className="detailsName">{oneRestaurant.name}</h1>
+        <h2 className="detailsMM">{oneRestaurant.mile_marker}MM</h2>
       </div>
   
         {menus && menus.length ? (
@@ -96,7 +97,7 @@ const RestuarantDetails = () => {
                     src="https://cdn-icons-png.flaticon.com/512/542/542724.png"
                   />
                   <Link 
-                    to={`/detail/${place.id}/${oneMenu.id}/editmenu`}
+                    to={`/detail/${oneRestaurant.id}/${oneMenu.id}/editmenu`}
                     state={{ origNote: 'menus' }}>
                       <button className="editButton">Edit Item</button>
                     </Link>
@@ -124,7 +125,7 @@ const RestuarantDetails = () => {
               onChange={handleChange} />  
             <button className="addItemButton" type="submit">Add Item To Menu</button>
           </form>
-          <button onClick={() => DeleteRestaurant(place.id)} className="deleteRestaurantButton">Delete Restaurant</button>
+          <button onClick={() => DeleteRestaurant(oneRestaurant.id)} className="deleteRestaurantButton">Delete Restaurant</button>
           </div>
   )}
   

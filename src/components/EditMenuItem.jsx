@@ -22,9 +22,10 @@ const EditMenuItem = () => {
       console.log(res)
       setUpdatedItem(res)
     }
+    console.log(updatedItem)
 
   const handleChange = (e) => {
-    setUpdatedItem({ [e.target.name]: e.target.value })
+    setUpdatedItem({ ...updatedItem,[e.target.name]: e.target.value })
   }
 
   useEffect(() => {
@@ -40,7 +41,7 @@ const EditMenuItem = () => {
         <div className="updateMenuItem">
           {/* <h2>Item:</h2> */}
           <input
-            name="Item"
+            name="item"
             id={updatedItem.id}
             placeholder="Item name"
             className="updateInput"
@@ -49,8 +50,8 @@ const EditMenuItem = () => {
             </input>
           {/* <h2>Price:</h2> */}
           <input
-            name="Price"
-            id={updatedItem.Price}
+            name="price"
+            id={updatedItem.price}
             placeholder="$ Price"
             className="updateInput"
             value={updatedItem.price}
