@@ -5,6 +5,7 @@
 Brunch is an application that allows the user to view, edit, and delete restaurants in the Lake of the Ozarks area. You can add restaurants and the items on their menu. Brunch can be used to understand the restaurants on the lake. We added the mile marker of each restaurant there users can get a rough idea of the location of each place.
 
 ## Navigating
+
 - A user must sign in to view all of the restaurants
 - If you have not signed in you can register with an email and unique password
 - Once logged in you can select any restaurant you desire
@@ -15,11 +16,11 @@ Brunch is an application that allows the user to view, edit, and delete restaura
 
 ## Screenshots of application
 
-![SignIn Page]()
+![SignIn Page](https://i.imgur.com/wUm5WU7.png)
 
-![Home Page]()
+![Home Page](https://i.imgur.com/oEVLxhN.png)
 
-![Restaurant Detail]()
+![Restaurant Detail](https://i.imgur.com/dlSRYy1.png)
 
 ## Technology Used
 
@@ -40,7 +41,7 @@ We will be adding a feature where everyone can view each others creation of rest
 
 ## Credits
 
--[Navigate on ]()
+-[Click here to use Brunch!]()
 -[Information about the Lake of the Ozarks](https://www.funlake.com/)
 -[Understanding CRUD](https://geeksforgeeks.com/)
 -[Using User Authentication](https://stackoverflow.com/)
