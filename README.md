@@ -41,7 +41,7 @@ We will be adding a feature where everyone can view each others creation of rest
 
 ## Credits
 
--[Click here to use Brunch!](https://brunch-fuentesdominic.vercel.app/register)
+-[Click here to use Brunch!](https://brunch-peach.vercel.app/register)
 -[Information about the Lake of the Ozarks](https://www.funlake.com/)
 -[Understanding CRUD](https://geeksforgeeks.com/)
 -[Using User Authentication](https://stackoverflow.com/)
