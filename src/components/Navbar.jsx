@@ -21,10 +21,10 @@ const Navbar = ({user, handleLogOut}) => {
 
   const publicOptions = (
     <div className="navbar">
-      <nav className='nav-links'>
-        <Link className='nav-link' to='/register'>Register</Link>
-        <Link className='nav-link' to='/'>Sign In</Link>
-        <Link className='nav-link' to='/about'>About</Link>
+      <nav className='public-links'>
+        <Link className='public-link' to='/register'>Register</Link>
+        <Link className='public-link' to='/'>Sign In</Link>
+        <Link className='public-link' to='/about'>About</Link>
       </nav>
     </div>
   );

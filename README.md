@@ -16,11 +16,11 @@ Brunch is an application that allows the user to view, edit, and delete restaura
 
 ## Screenshots of application
 
-![SignIn Page](https://i.imgur.com/wUm5WU7.png)
+![SignIn Page](https://i.imgur.com/mWwpptl.png)
 
-![Home Page](https://i.imgur.com/oEVLxhN.png)
+![Home Page](https://i.imgur.com/OxjWHZH.png)
 
-![Restaurant Detail](https://i.imgur.com/dlSRYy1.png)
+![Restaurant Detail](https://i.imgur.com/FB0mzzC.png)
 
 ## Technology Used
 
@@ -41,7 +41,7 @@ We will be adding a feature where everyone can view each others creation of rest
 
 ## Credits
 
--[Click here to use Brunch!](https://brunch-peach.vercel.app/register)
--[Information about the Lake of the Ozarks](https://www.funlake.com/)
--[Understanding CRUD](https://geeksforgeeks.com/)
--[Using User Authentication](https://stackoverflow.com/)
+- [Click here to use Brunch!](https://brunch-peach.vercel.app/register)
+- [Information about the Lake of the Ozarks](https://www.funlake.com/)
+- [Understanding CRUD](https://geeksforgeeks.com/)
+- [Using User Authentication](https://stackoverflow.com/)

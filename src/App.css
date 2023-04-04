@@ -6,20 +6,27 @@
   border-bottom: solid #fb8c00;
   height: 10vh;
   transition: all 0.4s;
-  
 }
 .navbar:hover {
   height: 12vh;
   transition: all 0.4s;
+}
+.public-link {
+  color: #fb8c00;
+  font-family: marker felt, fantasy;
+  text-decoration: none;
+  margin-right: 158.7px;
+  margin-left: 158.7px;
 }
 .nav-link {
   color: #fb8c00;
   font-family: marker felt, fantasy;
   text-decoration: none;
   justify-content: space-between;
-  margin-left: 130px;
-  margin-right: 50px;
+  margin-left: 110.4px;
+  margin-right: 72.4px;
 }
+
 .brunchIcon {
   max-width: 30px;
   padding-left: 10px;
