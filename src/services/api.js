@@ -1,6 +1,6 @@
 import Axios from 'axios'
 
-export const BASE_URL = 'https://brunch-backend.herokuapp.com/'
+export const BASE_URL = 'https://git.heroku.com/brunch-backend.git'
 const Client = Axios.create({ baseURL: BASE_URL })
 
 Client.interceptors.request.use(
