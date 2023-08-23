@@ -1,30 +1,40 @@
 /* navbar */
 .navbar {
-  background-color: black;
+  background-color: rgba(1,1,1,1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   display: flex;
   align-items: center;
-  border-bottom: solid #fb8c00;
-  height: 10vh;
+  /* justify-content: space-around; */
+  height: 8vh;
   transition: all 0.4s;
 }
 .navbar:hover {
-  height: 12vh;
+  height: 10vh;
   transition: all 0.4s;
 }
 .public-link {
   color: #fb8c00;
   font-family: marker felt, fantasy;
   text-decoration: none;
-  margin-right: 158.7px;
-  margin-left: 158.7px;
+  /* justify-content: space-between; */
+  /* margin-right: 158.7px; */
+  /* margin-left: 158.7px; */
+  margin-left: 7.5rem;
+  /* margin-right: 5rem; */
+  /* padding: 10px; */
 }
 .nav-link {
   color: #fb8c00;
   font-family: marker felt, fantasy;
   text-decoration: none;
   justify-content: space-between;
-  margin-left: 110.4px;
-  margin-right: 72.4px;
+  /* margin-left: 110.4px; */
+  /* margin-right: 72.4px; */
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .brunchIcon {
